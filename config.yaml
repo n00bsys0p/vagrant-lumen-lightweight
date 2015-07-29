@@ -1,0 +1,4 @@
+---
+:web_root: /var/www
+:web_user: vagrant
+:web_group: vagrant

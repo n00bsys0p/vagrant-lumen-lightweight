@@ -1,0 +1,5 @@
+---
+:local_port: 8080
+:application:
+    :name: tutorial
+    :db_enabled: true

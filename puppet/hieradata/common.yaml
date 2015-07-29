@@ -1,0 +1,18 @@
+php::ensure: latest
+php::manage_repos: true
+php::fpm: true
+php::fpm::config::log_level: debug
+php::settings::fpm:
+    PHP/memory_limit: 256M
+    PHP/error_reporting: E_ALL
+php::composer: true
+php::composer::auto_update: true
+
+php::extensions:
+    json: {}
+    mysql: {}
+    mcrypt: {}
+
+php::fpm::pools:
+    www:
+        listen: 127.0.0.1:9000
