@@ -14,6 +14,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "forwarded_port", guest: 80, host: app_config[:local_port]
 
+  config.vm.provision "shell", inline: "/usr/bin/apt-get update"
+
   config.vm.provision "puppet" do |puppet|
     puppet.facter = {
       'lumen_version'        => '~1.0',
