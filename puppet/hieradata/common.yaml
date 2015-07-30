@@ -1,10 +1,15 @@
 php::ensure: latest
 php::manage_repos: true
 php::fpm: true
-php::fpm::config::log_level: debug
+php::fpm::config::log_level: notice
+php::fpm::config::error_log: "%{::web_root}/logs/php-fpm.log"
 php::settings::fpm:
     PHP/memory_limit: 256M
     PHP/error_reporting: E_ALL
+    PHP/display_errors: On
+    PHP/display_startup_errors: On
+php::settings::cli:
+    PHP/memory_limit: 256M
 php::composer: true
 php::composer::auto_update: true
 
@@ -16,3 +21,6 @@ php::extensions:
 php::fpm::pools:
     www:
         listen: 127.0.0.1:9000
+        catch_workers_output: true
+        user: "%{::web_user}"
+        group: "%{::web_group}"

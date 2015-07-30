@@ -3,15 +3,6 @@
 node default {
   include ::php
 
-  Php::Fpm::Pool {
-      user  => $::web_user,
-      group => $::web_group
-  }
-
-  Php::Fpm::Config {
-      error_log => "${::web_root}/logs/php-fpm.log"
-  }
-
   $default_path = '/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin'
 
   Exec {
