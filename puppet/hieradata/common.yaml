@@ -17,8 +17,6 @@ php::extensions:
     json: {}
     mysql: {}
     mcrypt: {}
-    openssl: {}
-    mbstring: {}
 
 php::fpm::pools:
     www:
