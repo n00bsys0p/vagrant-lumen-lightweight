@@ -34,7 +34,8 @@ node default {
     default_vhost       => false,
     user                => $::web_user,
     group               => $::web_group,
-    logroot             => $::web_root
+    logroot             => $::web_root,
+    sendfile            => 'Off'
   }
 
   include apache::mod::rewrite
